@@ -1,6 +1,6 @@
 @echo off
 cd src/
 echo.
-echo STARTING AA
+echo Starting Double A...
 python main.py
 pause
