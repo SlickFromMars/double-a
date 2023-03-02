@@ -1,6 +1,6 @@
 @echo off
 cd src/
-echo.
 echo Starting Double A...
+echo.
 
 python __init__.py
