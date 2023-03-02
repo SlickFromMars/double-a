@@ -1,9 +1,12 @@
 import random
 import keys
 import os
+import prefs
 
 class DoubleA():
     def __init__(self):
+        prefs.save("test", "test")
+        
         print("Bot initialized!")
         
     def chat(self, query):
