@@ -1,15 +1,12 @@
-import spacy
+import chatter
+import keys
 
-nlp = spacy.load("en_core_web_sm")
-running = True
-raw = ""
+bot = chatter.DoubleA()
 
-def run_ask():
-    global raw
-    raw = input('\nInput Command: ')
+while True:
+    query = input('\n> ').lower()
     
-    my_doc = nlp(raw)
-    print ([token.text for token in my_doc])
-
-while running:
-    run_ask()
+    if query in keys.exit_conditions:
+        break
+    else:
+        bot.chat(query)
