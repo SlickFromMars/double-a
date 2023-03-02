@@ -6,9 +6,10 @@ raw = ""
 
 def run_ask():
     global raw
-
     raw = input('\nInput Command: ')
-    print(raw)
+    
+    my_doc = nlp(raw)
+    print ([token.text for token in my_doc])
 
 while running:
     run_ask()
