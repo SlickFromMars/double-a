@@ -4,7 +4,7 @@ import os
 import prefs
 import webbrowser
 import time
-import matplotlib.pyplot as plt
+import calculate
 
 class DoubleA():
     sillyState = False
@@ -47,17 +47,10 @@ class DoubleA():
             print("Your name is " + prefs.data["name"] + ".")
 
         elif query == keys.scatter_condition:
-            x = []
-            y = []
-            while True:
-                x.append(input("Enter X coord > "))
-                y.append(input("Enter Y coord > "))
-                cont = input("Continue? (y/n)")
-                if cont != "y":
-                    break
+            calculate.scatter()
 
-            plt.scatter(x, y)
-            plt.show()
+        elif query == keys.mean_condition:
+            calculate.mean()
 
         else:
             print(random.choice(keys.confused_responses))
