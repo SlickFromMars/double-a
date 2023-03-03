@@ -8,6 +8,7 @@ import project
 
 class DoubleA():
     sillyState = False
+    sussyChars = ".!?,"
 
     def greet(self):
         greeting_list = keys.greetings
@@ -24,6 +25,10 @@ class DoubleA():
         self.greet()
         
     def chat(self, query):
+        trimmed_query = query.strip()
+        if trimmed_query[len(trimmed_query) - 1] in self.sussyChars:
+            trimmed_query = trimmed_query.rstrip(trimmed_query[-1])
+
         if self.sillyState and query.startswith("General Kenobi"):
             print("You are a bold one.")
             time.sleep(2)
@@ -34,16 +39,16 @@ class DoubleA():
         elif self.sillyState:
             self.sillyState = False
         
-        elif query in keys.greet_conditions:
+        if query in keys.greet_conditions:
             self.greet()
 
-        elif query.startswith(keys.name_condition):
-            name = query.replace(keys.name_condition, "")
+        elif trimmed_query.startswith("My name is "):
+            name = trimmed_query.replace("My name is ", "")
             prefs.data["name"] = name
             print("Hello, " + name + "!")
             prefs.save()
 
-        elif query == keys.say_name_condition:
+        elif query == "Say my name.":
             print("Your name is " + prefs.data["name"] + ".")
 
         elif query == "Open a project.":
