@@ -16,7 +16,6 @@ class DoubleA():
             if(os.path.isdir(path)):
                 print("Opening " + project + "...")
                 os.system("code " + path)
-                os.system("github " + path)
             else:
                 print(path + " is not a directory!")
         else:
