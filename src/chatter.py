@@ -1,10 +1,10 @@
 import random
 import keys
-import os
 import prefs
 import webbrowser
 import time
 import calculate
+import project
 
 class DoubleA():
     sillyState = False
@@ -27,16 +27,6 @@ class DoubleA():
                 return
             self.sillyState = False
 
-        lowQuery = query.lower()
-        if lowQuery.startswith(keys.project_condition):
-            project = lowQuery.replace(keys.project_condition, "")
-            path = os.path.expanduser("~/Documents/GitHub/" + project)
-            if(os.path.isdir(path)):
-                print("Opening " + project + "...")
-                os.system("code " + path)
-            else:
-                print(path + " is not a directory!")
-
         elif query.startswith(keys.name_condition):
             name = query.replace(keys.name_condition, "")
             prefs.data["name"] = name
@@ -45,6 +35,9 @@ class DoubleA():
 
         elif query == keys.say_name_condition:
             print("Your name is " + prefs.data["name"] + ".")
+
+        if query == "Open a project.":
+            project.open_project()
 
         elif query == "Generate scatter plot.":
             calculate.scatter()
