@@ -9,23 +9,33 @@ import project
 class DoubleA():
     sillyState = False
 
+    def greet(self):
+        greeting_list = keys.greetings
+        greeting_list.append("Hello there.")
+        greeting = random.choice(greeting_list)
+        if greeting == "Hello there.":
+            self.sillyState = True
+        print(greeting.replace('$name$', prefs.data["name"]))
+
     def __init__(self):
         prefs.load()
         
         print("Bot initialized!\n")
-        greeting = random.choice(keys.greetings)
-        if greeting == "Hello there.":
-            self.sillyState = True
-        print(greeting.replace('$name$', prefs.data["name"]))
+        self.greet()
         
     def chat(self, query):
-        if self.sillyState:
-            if query.startswith("General Kenobi"):
-                print("You are a bold one.")
-                time.sleep(2)
-                webbrowser.open("https://www.youtube.com/watch?v=rEq1Z0bjdwc")
-                return
+        if self.sillyState and query.startswith("General Kenobi"):
+            print("You are a bold one.")
+            time.sleep(2)
+            webbrowser.open("https://www.youtube.com/watch?v=rEq1Z0bjdwc")
             self.sillyState = False
+            return
+            
+        elif self.sillyState:
+            self.sillyState = False
+        
+        elif query in keys.greet_conditions:
+            self.greet()
 
         elif query.startswith(keys.name_condition):
             name = query.replace(keys.name_condition, "")
