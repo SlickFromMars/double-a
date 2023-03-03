@@ -21,3 +21,8 @@ def mean():
         tot += float(i)
     x = tot / len(grp)
     print("Mean is " + str(x))
+
+def calculate():
+    raw = input("Enter problem > ")
+    solved = eval(raw)
+    print(solved)

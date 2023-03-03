@@ -6,3 +6,4 @@ greetings = ["Hello there.", "Greetings, $name$!", "Hello, $name$!", "How can I 
 say_name_condition = "Say my name."
 scatter_condition = "Generate scatter plot."
 mean_condition = "Calculate mean."
+math_condition = "Solve a math problem."

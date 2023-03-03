@@ -52,5 +52,8 @@ class DoubleA():
         elif query == keys.mean_condition:
             calculate.mean()
 
+        elif query == keys.math_condition:
+            calculate.calculate()
+
         else:
             print(random.choice(keys.confused_responses))
