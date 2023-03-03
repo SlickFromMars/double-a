@@ -4,6 +4,7 @@ import os
 import prefs
 import webbrowser
 import time
+import matplotlib.pyplot as plt
 
 class DoubleA():
     sillyState = False
@@ -45,6 +46,18 @@ class DoubleA():
         elif query == keys.say_name_condition:
             print("Your name is " + prefs.data["name"] + ".")
 
+        elif query == keys.scatter_condition:
+            x = []
+            y = []
+            while True:
+                x.append(input("Enter X coord > "))
+                y.append(input("Enter Y coord > "))
+                cont = input("Continue? (y/n)")
+                if cont != "y":
+                    break
+
+            plt.scatter(x, y)
+            plt.show()
+
         else:
             print(random.choice(keys.confused_responses))
-            

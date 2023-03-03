@@ -4,3 +4,4 @@ project_condition = "open project "
 name_condition = "My name is "
 greetings = ["Hello there.", "Greetings, $name$!", "Hello, $name$!", "How can I help you today, $name$?"]
 say_name_condition = "Say my name."
+scatter_condition = "Generate scatter plot."
