@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 def scatter():
     x = []
@@ -11,6 +12,37 @@ def scatter():
             break
 
     plt.scatter(x, y)
+
+    plt.title("Generated Scatter Plot")
+    plt.xlabel("X Axis")
+    plt.ylabel("Y Axis")
+
+    plt.show()
+
+def pie():
+    names = []
+    values = []
+    while True:
+        names.append(input("Enter Label > "))
+        values.append(input("Enter Value > "))
+        cont = input("Continue? (y/n)")
+        if cont != "y":
+            break
+
+    plt.pie(values, labels = names)
+    plt.show()
+
+def bar():
+    names = []
+    values = []
+    while True:
+        names.append(input("Enter Label > "))
+        values.append(input("Enter Value > "))
+        cont = input("Continue? (y/n)")
+        if cont != "y":
+            break
+
+    plt.bar(names, values)
     plt.show()
 
 def mean():

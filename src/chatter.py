@@ -48,5 +48,11 @@ class DoubleA():
         elif query == "Solve a math problem.":
             calculate.calculate()
 
+        elif query == "Generate pie chart.":
+            calculate.pie()
+
+        elif query == "Generate bar graph.":
+            calculate.bar()
+
         else:
             print(random.choice(keys.confused_responses))
