@@ -36,7 +36,7 @@ class DoubleA():
         elif query == keys.say_name_condition:
             print("Your name is " + prefs.data["name"] + ".")
 
-        if query == "Open a project.":
+        elif query == "Open a project.":
             project.open_project()
 
         elif query == "Generate scatter plot.":
