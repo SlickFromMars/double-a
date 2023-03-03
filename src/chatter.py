@@ -2,12 +2,14 @@ import random
 import keys
 import os
 import prefs
+import random
 
 class DoubleA():
     def __init__(self):
         prefs.load()
         
-        print("Bot initialized!")
+        print("Bot initialized!\n")
+        print(random.choice(keys.greetings) + ", " + prefs.data["name"] + '! How can I help you today?')
         
     def chat(self, query):
         lowQuery = query.lower()
