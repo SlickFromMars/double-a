@@ -11,7 +11,6 @@ data = {
     "name": "User"
 }
 
-
 def save():
     global data
 
