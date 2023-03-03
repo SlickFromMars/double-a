@@ -2,7 +2,6 @@ import random
 import keys
 import os
 import prefs
-import random
 import webbrowser
 import time
 
