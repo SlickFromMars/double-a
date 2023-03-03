@@ -5,7 +5,7 @@ import prefs
 
 class DoubleA():
     def __init__(self):
-        prefs.save("test", "test")
+        prefs.load()
         
         print("Bot initialized!")
         
