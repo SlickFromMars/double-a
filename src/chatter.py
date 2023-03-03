@@ -3,15 +3,30 @@ import keys
 import os
 import prefs
 import random
+import webbrowser
+import time
 
 class DoubleA():
+    sillyState = False
+
     def __init__(self):
         prefs.load()
         
         print("Bot initialized!\n")
-        print(random.choice(keys.greetings) + ", " + prefs.data["name"] + '! How can I help you today?')
+        greeting = random.choice(keys.greetings)
+        if greeting == "Hello there":
+            self.sillyState = True
+        print(greeting + ", " + prefs.data["name"] + '! How can I help you today?')
         
     def chat(self, query):
+        if self.sillyState:
+            if query.startswith("General Kenobi"):
+                print("You are a bold one.")
+                time.sleep(2)
+                webbrowser.open("https://www.youtube.com/watch?v=rEq1Z0bjdwc")
+                return
+            self.sillyState = False
+
         lowQuery = query.lower()
         if lowQuery.startswith(keys.project_condition):
             project = lowQuery.replace(keys.project_condition, "")
