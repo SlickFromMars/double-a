@@ -4,7 +4,7 @@ import json
 path = 'prefs.json'
 
 data = {
-    "name": "Slick"
+    "name": ""
 }
 
 
