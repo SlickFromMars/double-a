@@ -41,5 +41,7 @@ class DoubleA():
             prefs.data["name"] = name
             print("Hello, " + name + "!")
             prefs.save()
+        elif query == keys.say_name_condition:
+            print("Your name is " + prefs.data["name"] + ".")
         else:
             print(random.choice(keys.confused_responses))

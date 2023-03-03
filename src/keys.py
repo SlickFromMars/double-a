@@ -3,3 +3,4 @@ confused_responses = ["I'm not sure how to respond.", "Can you try rewording tha
 project_condition = "open project "
 name_condition = "My name is "
 greetings = ["Hello there.", "Greetings, $name$!", "Hello, $name$!", "How can I help you today, $name$?"]
+say_name_condition = "Say my name."
