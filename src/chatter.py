@@ -14,9 +14,9 @@ class DoubleA():
         
         print("Bot initialized!\n")
         greeting = random.choice(keys.greetings)
-        if greeting == "Hello there":
+        if greeting == "Hello there.":
             self.sillyState = True
-        print(greeting + ", " + prefs.data["name"] + '! How can I help you today?')
+        print(greeting.replace('$name$', prefs.data["name"]))
         
     def chat(self, query):
         if self.sillyState:
