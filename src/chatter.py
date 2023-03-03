@@ -46,13 +46,13 @@ class DoubleA():
         elif query == keys.say_name_condition:
             print("Your name is " + prefs.data["name"] + ".")
 
-        elif query == keys.scatter_condition:
+        elif query == "Generate scatter plot.":
             calculate.scatter()
 
-        elif query == keys.mean_condition:
+        elif query == "Calculate mean.":
             calculate.mean()
 
-        elif query == keys.math_condition:
+        elif query == "Solve a math problem.":
             calculate.calculate()
 
         else:
