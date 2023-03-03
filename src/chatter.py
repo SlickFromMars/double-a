@@ -35,12 +35,16 @@ class DoubleA():
                 os.system("code " + path)
             else:
                 print(path + " is not a directory!")
+
         elif query.startswith(keys.name_condition):
             name = query.replace(keys.name_condition, "")
             prefs.data["name"] = name
             print("Hello, " + name + "!")
             prefs.save()
+
         elif query == keys.say_name_condition:
             print("Your name is " + prefs.data["name"] + ".")
+
         else:
             print(random.choice(keys.confused_responses))
+            
