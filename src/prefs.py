@@ -1,17 +1,21 @@
 import os
 import json
+from appdata import AppDataPaths
 
-path = 'prefs.json'
+app_paths = AppDataPaths('DoubleA')
+app_paths.setup()
+
+path = app_paths.app_data_path + '/prefs.json'
 
 data = {
-    "name": ""
+    "name": "User"
 }
 
 
 def save():
     global data
 
-    f = open('prefs.json', 'w')
+    f = open(path, 'w')
     f.write(json.dumps(data))
     f.close()
 
@@ -21,8 +25,8 @@ def load():
 
     tempData = data
 
-    if (os.path.isfile(os.path.abspath('prefs.json'))):
-        f = open('prefs.json', 'r')
+    if (os.path.isfile(os.path.abspath(path))):
+        f = open(path, 'r')
         raw = f.read()
         tempData = json.loads(raw)
         f.close()
