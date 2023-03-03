@@ -4,7 +4,7 @@ import keys
 bot = chatter.DoubleA()
 
 while True:
-    query = input('\n> ').lower()
+    query = input('\n> ')
     
     if query in keys.exit_conditions:
         break

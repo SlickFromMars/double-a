@@ -30,5 +30,3 @@ def load():
 
     for key in tempData.keys():
         data[key] = tempData[key]
-
-    save()

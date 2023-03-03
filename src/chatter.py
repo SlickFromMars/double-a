@@ -10,13 +10,19 @@ class DoubleA():
         print("Bot initialized!")
         
     def chat(self, query):
-        if query.startswith(keys.project_condition):
-            project = query.replace(keys.project_condition, "")
+        lowQuery = query.lower()
+        if lowQuery.startswith(keys.project_condition):
+            project = lowQuery.replace(keys.project_condition, "")
             path = os.path.expanduser("~/Documents/GitHub/" + project)
             if(os.path.isdir(path)):
                 print("Opening " + project + "...")
                 os.system("code " + path)
             else:
                 print(path + " is not a directory!")
+        elif query.startswith(keys.name_condition):
+            name = query.replace(keys.name_condition, "")
+            prefs.data["name"] = name
+            print("Hello, " + name + "!")
+            prefs.save()
         else:
             print(random.choice(keys.confused_responses))
