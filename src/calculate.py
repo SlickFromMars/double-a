@@ -13,11 +13,6 @@ def scatter():
             break
 
     plt.scatter(x, y)
-
-    plt.title("Generated Scatter Plot")
-    plt.xlabel("X Axis")
-    plt.ylabel("Y Axis")
-
     plt.show()
 
 
