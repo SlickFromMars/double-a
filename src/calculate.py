@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 def scatter():
     x = []
     y = []
@@ -19,6 +20,7 @@ def scatter():
 
     plt.show()
 
+
 def pie():
     names = []
     values = []
@@ -29,8 +31,9 @@ def pie():
         if cont != "y":
             break
 
-    plt.pie(values, labels = names)
+    plt.pie(values, labels=names)
     plt.show()
+
 
 def bar():
     names = []
@@ -45,6 +48,7 @@ def bar():
     plt.bar(names, values)
     plt.show()
 
+
 def mean():
     raw = input("Enter list of numbers > ").replace(" ", "")
     grp = raw.split(",")
@@ -53,6 +57,7 @@ def mean():
         tot += float(i)
     x = tot / len(grp)
     print("Mean is " + str(x))
+
 
 def calculate():
     raw = input("Enter problem > ")

@@ -1,12 +1,14 @@
 import random
+import time
+import webbrowser
+
+import calculate
 import keys
 import prefs
-import webbrowser
-import time
-import calculate
 import project
 
-class DoubleA():
+
+class DoubleA:
     sillyState = False
     sussyChars = ".!?,"
 
@@ -16,14 +18,14 @@ class DoubleA():
         greeting = random.choice(greeting_list)
         if greeting == "Hello there.":
             self.sillyState = True
-        print(greeting.replace('$name$', prefs.data["name"]))
+        print(greeting.replace("$name$", prefs.data["name"]))
 
     def __init__(self):
         prefs.load()
-        
+
         print("Bot initialized!\n")
         self.greet()
-        
+
     def chat(self, query):
         trimmed_query = query.strip()
         if trimmed_query[len(trimmed_query) - 1] in self.sussyChars:
@@ -35,10 +37,10 @@ class DoubleA():
             webbrowser.open("https://www.youtube.com/watch?v=rEq1Z0bjdwc")
             self.sillyState = False
             return
-            
+
         elif self.sillyState:
             self.sillyState = False
-        
+
         if trimmed_query in keys.greet_conditions:
             self.greet()
 

@@ -2,5 +2,13 @@
 	"files.exclude": {
 		"src/__pycache__/": true,
 		"src/prefs.json": true
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true,
+		},
 	}
 }
