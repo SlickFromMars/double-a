@@ -29,7 +29,7 @@ class DoubleA():
         if trimmed_query[len(trimmed_query) - 1] in self.sussyChars:
             trimmed_query = trimmed_query.rstrip(trimmed_query[-1])
 
-        if self.sillyState and query.startswith("General Kenobi"):
+        if self.sillyState and trimmed_query == "General Kenobi":
             print("You are a bold one.")
             time.sleep(2)
             webbrowser.open("https://www.youtube.com/watch?v=rEq1Z0bjdwc")
@@ -39,7 +39,7 @@ class DoubleA():
         elif self.sillyState:
             self.sillyState = False
         
-        if query in keys.greet_conditions:
+        if trimmed_query in keys.greet_conditions:
             self.greet()
 
         elif trimmed_query.startswith("My name is "):
@@ -48,25 +48,25 @@ class DoubleA():
             print("Hello, " + name + "!")
             prefs.save()
 
-        elif query == "Say my name.":
+        elif trimmed_query == "Say my name":
             print("Your name is " + prefs.data["name"] + ".")
 
-        elif query == "Open a project.":
+        elif trimmed_query == "Open a project":
             project.open_project()
 
-        elif query == "Generate scatter plot.":
+        elif trimmed_query == "Generate scatter plot":
             calculate.scatter()
 
-        elif query == "Calculate mean.":
+        elif trimmed_query == "Calculate mean":
             calculate.mean()
 
-        elif query == "Solve a math problem.":
+        elif trimmed_query == "Solve a math problem":
             calculate.calculate()
 
-        elif query == "Generate pie chart.":
+        elif trimmed_query == "Generate pie chart":
             calculate.pie()
 
-        elif query == "Generate bar graph.":
+        elif trimmed_query == "Generate bar graph":
             calculate.bar()
 
         else:
