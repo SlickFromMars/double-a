@@ -1,4 +1,5 @@
 @echo off
+title Library Installation
 echo Installing libraries...
 echo.
 cd ../
