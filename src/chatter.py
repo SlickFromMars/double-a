@@ -1,11 +1,11 @@
 import random
 import time
 import webbrowser
+import os
 
 import calculate
 import keys
 import prefs
-import project
 
 
 class DoubleA:
@@ -54,7 +54,15 @@ class DoubleA:
             print("Your name is " + prefs.data["name"] + ".")
 
         elif trimmed_query == "Open GitHub project":
-            project.open_project()
+            project = input("Project name > ")
+            project = project.replace(" ", "-")
+            path = os.path.expanduser("~/Documents/GitHub/" + project)
+            if os.path.isdir(path):
+                print("Opening " + project + "...")
+                os.system("code " + path)
+                os.system("github " + path)
+            else:
+                print(path + " is not a directory!")
 
         elif trimmed_query == "Generate scatter plot":
             calculate.scatter()
