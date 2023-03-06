@@ -53,7 +53,7 @@ class DoubleA:
         elif trimmed_query == "Say my name":
             print("Your name is " + prefs.data["name"] + ".")
 
-        elif trimmed_query == "Open a project":
+        elif trimmed_query == "Open GitHub project":
             project.open_project()
 
         elif trimmed_query == "Generate scatter plot":
