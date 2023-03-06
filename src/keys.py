@@ -11,4 +11,4 @@ greetings = [
     "Hello, $name$!",
     "How can I help you today, $name$?",
 ]
-greet_conditions = ["Hi", "Hello"]
+greet_conditions = ["Hi", "Hey", "Hello", "Hola", "Greetings", "Wassup"]
