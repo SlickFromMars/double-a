@@ -5,8 +5,7 @@ echo.
 echo Installing libraries...
 echo.
 
-pip install appdata
-pip install matplotlib
+pip install -r requirements.txt
 
 echo.
 echo Installation complete.
