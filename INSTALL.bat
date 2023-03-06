@@ -5,8 +5,9 @@ echo.
 echo Installing libraries...
 echo.
 
-pip install appdata --quiet
-pip install matplotlib --quiet
+pip install appdata
+pip install matplotlib
 
+echo.
 echo Installation complete.
 pause
