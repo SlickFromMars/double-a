@@ -2,10 +2,11 @@ import random
 import time
 import webbrowser
 
-from src import calculate
-from src import keys
-from src import prefs
-from src import project
+import calculate
+import keys
+import prefs
+import project
+
 
 class DoubleA:
     sillyState = False
@@ -72,14 +73,3 @@ class DoubleA:
 
         else:
             print(random.choice(keys.confused_responses))
-
-
-bot = DoubleA()
-
-while True:
-    query = input("\n> ")
-
-    if query in keys.exit_conditions:
-        break
-    else:
-        bot.chat(query)
