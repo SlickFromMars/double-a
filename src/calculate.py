@@ -87,3 +87,14 @@ def simp_rad():
         print(str(r))
     else:
         print(str(r) + " sqrt " + str(e))
+
+def gcf():
+    x = int(input("Number 1 > "))
+    y = int(input("Number 2 > "))
+    z = 1
+    xf = getFactors(x)
+    yf = getFactors(y)
+    for i in xf:
+        if i in yf:
+            z = i
+    print("GCF is " + str(z))

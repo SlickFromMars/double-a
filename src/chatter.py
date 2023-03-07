@@ -97,5 +97,8 @@ class DoubleA:
         elif trimmed_query == "Simplify radical":
             calculate.simp_rad()
 
+        elif trimmed_query == "Calculate GCF":
+            calculate.gcf()
+
         else:
             print(random.choice(keys.confused_responses))
