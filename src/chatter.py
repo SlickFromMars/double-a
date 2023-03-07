@@ -3,6 +3,8 @@ import random
 import time
 import webbrowser
 
+import requests
+
 import calculate
 import keys
 import prefs
@@ -43,6 +45,19 @@ class DoubleA:
 
         if trimmed_query in keys.greet_conditions:
             self.greet()
+        
+        elif trimmed_query == "Show code license":
+            r = requests.get("https://raw.githubusercontent.com/SlickFromMars/double-a/main/LICENSE.txt")
+            if r:
+                print("\n" + r.text)
+                f = open(keys.license_path, "w")
+                f.write(r.text)
+            elif os.path.isfile(keys.license_path):
+                print(str(r.status_code) + " Error getting online license. Showing local version.")
+                f = open(keys.license_path, "r")
+                print("\n" + f.read())
+            else:
+                print("Could not get license!")
 
         elif trimmed_query.startswith("My name is "):
             name = trimmed_query.replace("My name is ", "")

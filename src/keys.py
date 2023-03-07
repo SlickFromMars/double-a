@@ -1,4 +1,5 @@
 exit_conditions = ["quit", "exit", "close"]
+license_path = "../LICENSE.txt"
 confused_responses = [
     "I'm not sure how to respond.",
     "Can you try rewording that?",
