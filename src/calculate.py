@@ -1,3 +1,5 @@
+import math
+
 import matplotlib.pyplot as plt
 
 
@@ -57,3 +59,31 @@ def calculate():
     raw = input("Enter problem > ")
     solved = eval(raw)
     print(solved)
+
+def getFactors(n):
+    # Create an empty list for factors
+    factors=[]
+
+    # Loop over all factors
+    for i in range(1, n + 1):
+        if n % i == 0:
+            factors.append(i)
+
+    # Return the list of factors
+    return factors
+
+def simp_rad():
+    x = int(input("sqrt of > "))
+    y = 0
+    r = 0
+    factors = getFactors(x)
+    for i in factors:
+        root = math.sqrt(i)
+        if int(root + 0.5) ** 2 == i:
+            y = i
+            r = root
+    e = x / y
+    if(e == 1.0):
+        print(str(r))
+    else:
+        print(str(r) + " sqrt " + str(e))

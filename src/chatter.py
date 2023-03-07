@@ -79,5 +79,8 @@ class DoubleA:
         elif trimmed_query == "Generate bar graph":
             calculate.bar()
 
+        elif trimmed_query == "Simplify radical":
+            calculate.simp_rad()
+
         else:
             print(random.choice(keys.confused_responses))
