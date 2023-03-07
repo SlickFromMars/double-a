@@ -85,7 +85,7 @@ class DoubleA:
         elif trimmed_query == "Calculate mean":
             calculate.mean()
 
-        elif trimmed_query == "Solve a math problem":
+        elif trimmed_query == "Solve equation":
             calculate.calculate()
 
         elif trimmed_query == "Generate pie chart":
