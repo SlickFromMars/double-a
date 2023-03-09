@@ -1,7 +1,8 @@
 {
 	"files.exclude": {
 		"src/__pycache__/": true,
-		"src/prefs.json": true
+		"src/prefs.json": true,
+		"venv/": true
 	},
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter",
