@@ -6,8 +6,8 @@ import webbrowser
 import requests
 
 import calculate
+import client
 import keys
-import prefs
 
 
 class DoubleA:
@@ -20,10 +20,10 @@ class DoubleA:
         greeting = random.choice(greeting_list)
         if greeting == "Hello there.":
             self.sillyState = True
-        print(greeting.replace("$name$", prefs.data["name"]))
+        print(greeting.replace("$name$", client.data["name"]))
 
     def __init__(self):
-        prefs.load()
+        client.load()
 
         print("Bot initialized!\n")
         self.greet()
@@ -61,12 +61,12 @@ class DoubleA:
 
         elif trimmed_query.startswith("My name is "):
             name = trimmed_query.replace("My name is ", "")
-            prefs.data["name"] = name
+            client.data["name"] = name
             print("Hello, " + name + "!")
-            prefs.save()
+            client.save()
 
         elif trimmed_query == "Say my name":
-            print("Your name is " + prefs.data["name"] + ".")
+            print("Your name is " + client.data["name"] + ".")
 
         elif trimmed_query == "Open GitHub project":
             project = input("Project name > ")

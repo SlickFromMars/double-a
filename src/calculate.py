@@ -2,6 +2,8 @@ import math
 
 import matplotlib.pyplot as plt
 
+import client
+
 
 def scatter():
     x = []
@@ -57,7 +59,10 @@ def mean():
 
 def calculate():
     raw = input("Enter problem > ")
-    solved = eval(raw)
+    try:
+        solved = eval(raw)
+    except Exception as Argument:
+        client.log(Argument)   
     print(solved)
 
 def getFactors(n):
