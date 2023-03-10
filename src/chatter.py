@@ -100,5 +100,10 @@ class DoubleA:
         elif trimmed_query == "Calculate GCF":
             calculate.gcf()
 
+        elif trimmed_query == "8-Ball":
+            q = input("Ask your question. > ")
+            time.sleep(random.randint(1, 3))
+            print(random.choice(keys.ball_responses))
+
         else:
             print(random.choice(keys.confused_responses))
