@@ -2,7 +2,7 @@ import datetime
 import json
 import os
 
-data_path = "C:/Users/wchurchill_bnsstuden/.doublea"
+data_path = os.path.join(os.path.expanduser('~'), ".doublea")
 prefs_path = os.path.join(data_path, "prefs.json")
 log_path = os.path.join(data_path, "log.txt")
 
