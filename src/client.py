@@ -1,7 +1,10 @@
 import json
 import os
 
-data = {"name": "User", "speechEnabled": True}
+data = {
+    "name": "User", 
+    "speechEnabled": True
+}
 
 data_path:str
 prefs_path:str
