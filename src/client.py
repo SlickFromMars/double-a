@@ -16,6 +16,7 @@ def setup():
 
 def save():
     global data
+    global prefs_path
 
     f = open(prefs_path, "w")
     f.write(json.dumps(data, indent=4))
@@ -24,6 +25,7 @@ def save():
 
 def load():
     global data
+    global prefs_path
 
     tempData = data
 
