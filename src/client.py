@@ -1,21 +1,20 @@
 import json
 import os
 
-data = {
-    "name": "User", 
-    "speechEnabled": True
-}
+data = {"name": "User", "speechEnabled": True}
 
-data_path:str
-prefs_path:str
+data_path: str
+prefs_path: str
+
 
 def setup():
     global data_path
     global prefs_path
-    data_path = os.path.join(os.path.expanduser('~'), ".doublea")
+    data_path = os.path.join(os.path.expanduser("~"), ".doublea")
     prefs_path = os.path.join(data_path, "prefs.json")
 
-    os.makedirs(data_path, exist_ok = True)
+    os.makedirs(data_path, exist_ok=True)
+
 
 def save():
     global data

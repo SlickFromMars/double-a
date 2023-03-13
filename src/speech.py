@@ -2,14 +2,16 @@ import pyttsx3 as tts
 
 import client
 
-engine:tts.Engine
+engine: tts.Engine
+
 
 def setup():
     global engine
-    
+
     engine = tts.init()
 
-def say(txt:str):
+
+def say(txt: str):
     global engine
 
     print(txt)

@@ -62,17 +62,19 @@ def calculate():
     try:
         solved = eval(raw)
     except Exception as Argument:
-        print(Argument)  
+        print(Argument)
     say(solved)
 
+
 def getFactors(n):
-    factors=[]
+    factors = []
 
     for i in range(1, n + 1):
         if n % i == 0:
             factors.append(i)
 
     return factors
+
 
 def simp_rad():
     x = int(input("sqrt of > "))
@@ -85,10 +87,11 @@ def simp_rad():
             y = i
             r = root
     e = x / y
-    if(e == 1.0):
+    if e == 1.0:
         say(str(r))
     else:
         say(str(r) + " sqrt " + str(e))
+
 
 def gcf():
     x = int(input("Number 1 > "))

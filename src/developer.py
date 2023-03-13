@@ -17,14 +17,19 @@ def git_project():
     else:
         say(path + " is not a directory!")
 
+
 def show_license():
-    r = requests.get("https://raw.githubusercontent.com/SlickFromMars/double-a/main/LICENSE.txt")
+    r = requests.get(
+        "https://raw.githubusercontent.com/SlickFromMars/double-a/main/LICENSE.txt"
+    )
     if r:
         print("\n" + r.text)
         f = open(keys.license_path, "w")
         f.write(r.text)
     elif os.path.isfile(keys.license_path):
-        say(str(r.status_code) + " Error getting online license. Showing local version.")
+        say(
+            str(r.status_code) + " Error getting online license. Showing local version."
+        )
         f = open(keys.license_path, "r")
         print("\n" + f.read())
     else:

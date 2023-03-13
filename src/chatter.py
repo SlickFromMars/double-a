@@ -44,7 +44,7 @@ class DoubleA:
 
         if trimmed_query in keys.greet_conditions:
             self.greet()
-        
+
         elif trimmed_query == "Show code license":
             developer.show_license()
 
@@ -85,7 +85,7 @@ class DoubleA:
             q = input("Ask your question. > ")
             time.sleep(random.randint(1, 3))
             say(random.choice(keys.ball_responses))
-        
+
         elif trimmed_query == "Toggle speech":
             if client.data["speechEnabled"] == True:
                 client.data["speechEnabled"] = False
