@@ -6,9 +6,12 @@ engine:tts.Engine
 
 def setup():
     global engine
+    
     engine = tts.init()
 
 def say(txt:str):
+    global engine
+
     print(txt)
     if client.data["speechEnabled"] == True:
         if engine.isBusy():
