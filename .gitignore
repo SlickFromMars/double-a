@@ -1,3 +1,6 @@
 # Python
 */__pycache__/*
+
+# Generated stuff
 venv/
+.pytest_cache/
