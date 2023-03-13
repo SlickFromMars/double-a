@@ -3,9 +3,9 @@ import client
 import keys
 import speech
 
+client.setup()
 speech.setup()
 bot = chatter.DoubleA()
-client.startLog()
 
 while True:
     query = input("\n> ")
@@ -16,4 +16,4 @@ while True:
         try:
             bot.chat(query)
         except Exception as Argument:
-            client.log(Argument)
+            print(Argument)

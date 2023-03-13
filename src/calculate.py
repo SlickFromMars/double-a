@@ -2,7 +2,6 @@ import math
 
 import matplotlib.pyplot as plt
 
-import client
 from speech import say
 
 
@@ -63,7 +62,7 @@ def calculate():
     try:
         solved = eval(raw)
     except Exception as Argument:
-        client.log(Argument)   
+        print(Argument)  
     say(solved)
 
 def getFactors(n):
