@@ -1,7 +1,9 @@
 import chatter
 import client
 import keys
+import speech
 
+speech.setup()
 bot = chatter.DoubleA()
 client.startLog()
 

@@ -3,6 +3,7 @@ import math
 import matplotlib.pyplot as plt
 
 import client
+from speech import say
 
 
 def scatter():
@@ -54,7 +55,7 @@ def mean():
     for i in grp:
         tot += float(i)
     x = tot / len(grp)
-    print("Mean is " + str(x))
+    say("Mean is " + str(x))
 
 
 def calculate():
@@ -63,7 +64,7 @@ def calculate():
         solved = eval(raw)
     except Exception as Argument:
         client.log(Argument)   
-    print(solved)
+    say(solved)
 
 def getFactors(n):
     factors=[]
@@ -86,9 +87,9 @@ def simp_rad():
             r = root
     e = x / y
     if(e == 1.0):
-        print(str(r))
+        say(str(r))
     else:
-        print(str(r) + " sqrt " + str(e))
+        say(str(r) + " sqrt " + str(e))
 
 def gcf():
     x = int(input("Number 1 > "))
@@ -99,4 +100,4 @@ def gcf():
     for i in xf:
         if i in yf:
             z = i
-    print("GCF is " + str(z))
+    say("GCF is " + str(z))

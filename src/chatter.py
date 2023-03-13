@@ -8,6 +8,7 @@ import requests
 import calculate
 import client
 import keys
+from speech import say
 
 
 class DoubleA:
@@ -20,7 +21,7 @@ class DoubleA:
         greeting = random.choice(greeting_list)
         if greeting == "Hello there.":
             self.sillyState = True
-        print(greeting.replace("$name$", client.data["name"]))
+        say(greeting.replace("$name$", client.data["name"]))
 
     def __init__(self):
         client.load()
@@ -53,31 +54,31 @@ class DoubleA:
                 f = open(keys.license_path, "w")
                 f.write(r.text)
             elif os.path.isfile(keys.license_path):
-                print(str(r.status_code) + " Error getting online license. Showing local version.")
+                say(str(r.status_code) + " Error getting online license. Showing local version.")
                 f = open(keys.license_path, "r")
                 print("\n" + f.read())
             else:
-                print("Could not get license!")
+                say("Could not get license!")
 
         elif trimmed_query.startswith("My name is "):
             name = trimmed_query.replace("My name is ", "")
             client.data["name"] = name
-            print("Hello, " + name + "!")
+            say("Hello, " + name + "!")
             client.save()
 
         elif trimmed_query == "Say my name":
-            print("Your name is " + client.data["name"] + ".")
+            say("Your name is " + client.data["name"] + ".")
 
         elif trimmed_query == "Open GitHub project":
             project = input("Project name > ")
             project = project.replace(" ", "-")
             path = os.path.expanduser("~/Documents/GitHub/" + project)
             if os.path.isdir(path):
-                print("Opening " + project + "...")
+                say("Opening " + project + ".")
                 os.system("code " + path)
                 os.system("github " + path)
             else:
-                print(path + " is not a directory!")
+                say(path + " is not a directory!")
 
         elif trimmed_query == "Generate scatter plot":
             calculate.scatter()
@@ -103,7 +104,16 @@ class DoubleA:
         elif trimmed_query == "8-Ball":
             q = input("Ask your question. > ")
             time.sleep(random.randint(1, 3))
-            print(random.choice(keys.ball_responses))
+            say(random.choice(keys.ball_responses))
+        
+        elif trimmed_query == "Toggle speech":
+            if client.data["speechEnabled"] == True:
+                client.data["speechEnabled"] = False
+                say("Disabled speech.")
+            else:
+                client.data["speechEnabled"] = True
+                say("Enabled speech.")
+            client.save()
 
         else:
-            print(random.choice(keys.confused_responses))
+            say(random.choice(keys.confused_responses))

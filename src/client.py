@@ -8,7 +8,7 @@ log_path = os.path.join(data_path, "log.txt")
 
 os.makedirs(data_path, exist_ok = True)
 
-data = {"name": "User"}
+data = {"name": "User", "speechEnabled": True}
 
 def save():
     global data
